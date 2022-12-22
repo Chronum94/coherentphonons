@@ -3,13 +3,13 @@ from dataclasses import dataclass
 
 
 @dataclass
-class PotentialSplines:
+class PotentialFunctions:
     e: UnivariateSpline
     f: UnivariateSpline
     k: UnivariateSpline
 
 
-def make_splines_1d(energies, displacements, spline_degree=5):
+def make_splines_1d(displacements, energies, spline_degree=5):
     """_summary_
 
     Parameters
@@ -27,4 +27,5 @@ def make_splines_1d(energies, displacements, spline_degree=5):
         A tuple containing splines of (energy, gradient of energy, curvature of energy)
     """
     s = UnivariateSpline(displacements, energies, k=spline_degree, s=0.0)
-    return PotentialSplines(s, s.derivative(1), s.derivative(2))
+    sn = UnivariateSpline(displacements, -energies, k=spline_degree, s=0.0)
+    return PotentialFunctions(s, sn.derivative(1), s.derivative(2))
