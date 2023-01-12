@@ -1,4 +1,4 @@
-from scipy.interpolate import BivariateSpline
+from scipy.interpolate import RectBivariateSpline
 from dataclasses import dataclass
 from typing import Callable
 
@@ -37,24 +37,10 @@ def make_pes_splines_1d(displacements, energies, spline_degree=5):
     return PotentialFunctions(s, sn.derivative(1), s.derivative(2))
 
 def make_eps_splines_1d(displacements, energies, epsilon, spline_degree=5):
-    """_summary_
-
-    Parameters
-    ----------
-    energies : Iterable[float]
-        Energies in eV
-    displacements : Iterable[float]
-        Displacements in Angstrom
-    spline_degree : int, optional
-        Degree of interpolation spline, by default 5
-
-    Returns
-    -------
-    Tuple of splines
-        A tuple containing splines of (energy, gradient of energy, curvature of energy)
     """
-    sr = BivariateSpline(displacements, energies, epsilon.real, kx=spline_degree, ky=spline_degree, s=0.0)
-    si = BivariateSpline(displacements, energies, epsilon.imag, kx=spline_degree, ky=spline_degree, s=0.0)
+    """
+    sr = RectBivariateSpline(displacements, energies, epsilon.real, kx=spline_degree, ky=spline_degree, s=0.0)
+    si = RectBivariateSpline(displacements, energies, epsilon.imag, kx=spline_degree, ky=spline_degree, s=0.0)
     
     dsrdq = sr.partial_derivative(1, 0)
     dsidq = si.partial_derivative(1, 0)
