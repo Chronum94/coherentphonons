@@ -1,5 +1,5 @@
 import numpy as np
-from coherentphonons.pes import PotentialFunctions
+from coherentphonons.splines import PotentialFunctions
 from typing import Callable
 
 
