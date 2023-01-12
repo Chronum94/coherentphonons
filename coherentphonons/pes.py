@@ -1,12 +1,12 @@
 from scipy.interpolate import UnivariateSpline
 from dataclasses import dataclass
-
+from typing import Callable
 
 @dataclass
 class PotentialFunctions:
-    e: UnivariateSpline
-    f: UnivariateSpline
-    k: UnivariateSpline
+    e: Callable
+    f: Callable
+    k: Callable
 
 
 def make_splines_1d(displacements, energies, spline_degree=5):
