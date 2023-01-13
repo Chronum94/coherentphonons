@@ -50,6 +50,6 @@ def make_eps_splines_1d(displacements, energies, epsilon, spline_degree=5):
     
     eps = lambda x, w: sr(x, w) + 1.0j * si(x, w)
     depsdQ = lambda x, w: dsrdq(x, w) + 1.0j * dsidq(x, w)
-    depsdw = lambda x, w: dsrdw(x, w) + 1.0j * dsrdw(x, w)
+    depsdw = lambda x, w: dsrdw(x, w) + 1.0j * dsidw(x, w)
 
     return EpsilonFunctions(eps, depsdQ, depsdw)
