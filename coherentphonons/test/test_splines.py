@@ -29,3 +29,5 @@ def test_eps_splines():
     spline2d = make_eps_splines_1d(x, y, z)
     
     assert spline2d.eps(0.5, 0.5) == pytest.approx(1.0)
+    assert spline2d.depsdQ(0.5, 0.5) == pytest.approx(1.0)
+    assert spline2d.depsdw(0.5, 0.5) == pytest.approx(1.0)
