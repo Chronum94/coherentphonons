@@ -22,7 +22,9 @@ plt.show()
 
 TODO:
 
-- [ ] Document units.
+- [ ] Document units. Maybe use pint.
 - [ ] Support multidimensional potential energy functions/propagators.
+- [ ] More tests. What integration tests? How would that even happen?
+- [ ] A few examples, both insulating, dispersive and insulating, and dissipative+dispersive.
 
 This is effectively research code and I add features/change API specifications quite often and aggressively. Use with care, reviews appreciated.
