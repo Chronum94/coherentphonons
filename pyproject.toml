@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "coherentphonons"
-version = "0.1.1"
+version = "0.2.0"
 description = "Minimal set of convenience functions for simulating coherent phonons in materials."
 authors = ["Anubhab Haldar <ahaldar@bu.edu>"]
 license = "MIT"
@@ -11,6 +11,7 @@ python = "^3.8"
 numpy = "^1.18.0"
 scipy = "^1.8.0"
 multimethod = "^1.9"
+pytest = "^7.2.0"
 
 
 [build-system]
