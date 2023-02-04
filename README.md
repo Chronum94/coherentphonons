@@ -23,7 +23,9 @@ plt.show()
 TODO:
 
 - [ ] Document units. Maybe use pint.
-- [ ] Support multidimensional potential energy functions/propagators.
+- [ ] Support multidimensional potential energy functions/propagators. What is a good way to do this? I currently use radial basis functions in my personal code.
+- [ ] High dimensional PES training using small neural nets.
+- [ ] Ensemble excitations for Poincare surfaces of sections.
 - [ ] More tests. What integration tests? How would that even happen?
 - [ ] A few examples, both insulating, dispersive and insulating, and dissipative+dispersive.
 
